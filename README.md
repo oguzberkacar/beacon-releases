@@ -25,30 +25,81 @@ idea which server is still up, hunting for the port a dev server picked. Beacon
 puts every project's commands one click away and shows their live state at a
 glance — the menu-bar icon itself glows green while something runs.
 
-## Features
+## Works with your whole stack
 
-- **Active at a glance** — every running command surfaces in one list, newest
-  first, with its detected URL. Green = running, amber = starting, red = error.
-- **Favorites** — star the commands you reach for most and keep them on top.
-- **Folder groups** — bucket projects into folders (web, services, …) that
-  collapse and remember their state.
-- **Pin any command to the menu bar** — give a command its own menu-bar item
-  for one-click start/stop and a live log tail, independent of the main popover.
-- **Stop all** — kill every running process at once, with a checklist so you can
-  spare the ones you want to keep.
-- **Git at a glance** — branch and ahead/behind counts right on each project.
-- **Built-in terminal** — a tabbed terminal with a project sidebar, no extra app.
-- **One-click AI fix** — when a command errors, repair it with an AI assistant.
-- **Auto port detection** — Beacon reads the `localhost:PORT` from a dev
-  server's output and gives you a click-to-open link.
-- **Package manager aware** — detects `yarn` / `pnpm` / `bun` / `npm` from the
-  lockfile automatically.
+Beacon isn't just for web projects. Point it at a folder and it auto-detects the
+tasks for whatever's there — across **15+ ecosystems**:
+
+| | |
+|---|---|
+| **JavaScript / TypeScript** | npm · yarn · pnpm · bun |
+| **Python** | Django · Poetry · PDM |
+| **Rust** | Cargo |
+| **Go** | `go` tasks |
+| **Java / Kotlin** | Gradle · Maven |
+| **.NET** | `dotnet` |
+| **PHP** | Composer |
+| **Elixir** | Mix |
+| **Dart / Flutter** | pub · Flutter |
+| **Deno** | tasks |
+| **Task runners** | Make · just · Taskfile · Procfile |
+| **Containers** | Docker Compose |
+
+Or type any custom command (`python manage.py runserver`, `air`, `mix phx.server`, …)
+— Beacon runs and supervises it like everything else.
+
+## Built-in terminal
+
+A full tabbed terminal with a project sidebar, so you never leave the app. Open a
+shell in any project, watch a command's live output, or let Beacon open one for you.
 
 <div align="center">
-<img src="media/pinned-command.png" alt="A command pinned as its own menu-bar item" width="440">
-<br>
-<sub>Any command can become its own menu-bar item — status, controls, and live output.</sub>
+<img src="media/terminal.png" alt="Beacon's built-in tabbed terminal" width="760">
 </div>
+
+## Pin anything to the menu bar
+
+Give a command its own menu-bar item — one click to start/stop, with a live log
+tail and status, independent of the main popover.
+
+<div align="center">
+<img src="media/pinned-command.png" alt="A command pinned as its own menu-bar item" width="380">
+</div>
+
+## When something breaks, fix it in a click
+
+**Port already in use?** Beacon spots the conflict and offers to kill the process
+holding the port and restart — no more hunting for a stray PID.
+
+**Command errored?** Repair it with **Fix with Claude**. Beacon opens the built-in
+terminal and runs the `claude` CLI on the failure — using the Claude Code you're
+**already signed in to**. No API key, no separate billing, no extra setup: it uses
+your existing subscription, right in your terminal.
+
+<table>
+<tr>
+<td align="center"><img src="media/kill-port.png" alt="Kill the port and restart" width="360"></td>
+<td align="center"><img src="media/ai-fix.png" alt="Fix with Claude" width="360"></td>
+</tr>
+<tr>
+<td align="center"><sub>Port conflict → kill &amp; restart</sub></td>
+<td align="center"><sub>Errored → fix with your Claude CLI</sub></td>
+</tr>
+</table>
+
+<sub>Fix with Claude needs the <a href="https://www.anthropic.com/claude-code">Claude Code CLI</a> installed and signed in. It's optional — everything else works without it.</sub>
+
+## More
+
+- **Active at a glance** — every running command in one list, newest first, with
+  its detected URL. Green = running, amber = starting, red = error.
+- **Favorites** — star the commands you reach for most and keep them on top.
+- **Folder groups** — bucket projects into folders that collapse and remember.
+- **Stop all** — kill every running process at once, with a checklist so you can
+  spare the ones you want to keep.
+- **Git at a glance** — branch and ahead/behind counts on each project.
+- **Auto port detection** — Beacon reads `localhost:PORT` from a server's output
+  and gives you a click-to-open link.
 
 ## Install
 
@@ -56,10 +107,8 @@ glance — the menu-bar icon itself glows green while something runs.
 2. Open it and drag **Beacon** to your Applications folder.
 3. Launch it — the lighthouse appears in your menu bar. Click it to open the popover.
 
-The app is signed with a Developer ID and notarized by Apple, so it opens
-without Gatekeeper warnings. After the first install, **updates arrive
-automatically** — Beacon checks in the background and offers a one-click restart
-when a new version is ready.
+The app is signed with a Developer ID and notarized by Apple, so it opens without
+Gatekeeper warnings. After the first install, **updates arrive automatically**.
 
 ## Requirements
 
@@ -68,10 +117,9 @@ when a new version is ready.
 
 ## Updates
 
-Beacon updates itself. It checks for a new release on launch and periodically
-while running; when one is downloaded it shows a notification and installs on the
-next restart. You can also trigger a check from the menu-bar menu → **Check for
-Updates…**
+Beacon updates itself. It checks for a new release on launch and periodically while
+running; when one is downloaded it shows a notification and installs on the next
+restart. You can also trigger a check from the menu-bar menu → **Check for Updates…**
 
 ---
 
