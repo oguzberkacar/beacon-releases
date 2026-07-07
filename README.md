@@ -25,6 +25,17 @@ idea which server is still up, hunting for the port a dev server picked. Beacon
 puts every project's commands one click away and shows their live state at a
 glance — the menu-bar icon itself glows green while something runs.
 
+## Lives in your menu bar
+
+The lighthouse icon shows your status at a glance — **green** while a server runs,
+**amber** while one starts, **red** on error, and dim when idle. Pin any command
+and it gets **its own menu-bar item** carrying the same live status, plus a
+one-click terminal item — so the things you run most are always one click away.
+
+<div align="center">
+<img src="media/menubar.png" alt="Beacon and pinned commands in the macOS menu bar" width="720">
+</div>
+
 ## Works with your whole stack
 
 Beacon isn't just for web projects. Point it at a folder and it auto-detects the
